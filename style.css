@@ -1,0 +1,80 @@
+    #scroll-line {
+      transition: height 0.6s ease-out;
+    }
+
+    /* Slide-in Animations */
+    @keyframes slideInRight {
+      0% { opacity: 0; transform: translateX(100px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes slideInLeft {
+      0% { opacity: 0; transform: translateX(-100px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+
+    .animate-slide-in {
+      animation: slideInRight 1s ease-out forwards;
+    }
+
+    .project[data-direction="left"].animate-slide-in {
+      animation: slideInLeft 1s ease-out forwards;
+    }
+    @keyframes lineExpand {
+      from { width: 0; }
+      to { width: 200px; }
+    }
+    .line-animate {
+      animation: lineExpand 1s ease-out forwards;
+    }
+
+    .icon i {
+      font-size: 1.5rem;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .icon i:hover{
+      transform: scale(1.2);
+      color: whitesmoke;
+      cursor:pointer;
+    }
+        .icon i:hover:nth-child(2){color: skyblue;}
+        .icon i:hover:nth-child(3){color: lightgreen;}
+
+      canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0; /* stays behind content */
+    }
+    .content {
+      position: relative;
+      z-index: 1; /* keeps content above animation */
+    }
+    #cursor{
+     width: 20px;
+     height: 20px;
+     position: fixed;
+     z-index: 99;
+     background-color: #41ec0db2;
+     border-radius: 50%;
+     -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+     -ms-border-radius: 50%;
+     -o-border-radius: 50%;
+}
+#cursor-blur{
+  cursor:pointer;
+  width: 400px;
+  height: 400px;
+  position: fixed;
+  filter: blur(50px);
+  background-color: #56f50c3d;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  -webkit-filter: blur(50px);
+  z-index: 9;
+}
